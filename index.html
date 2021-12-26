@@ -1,68 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css" />
-  <title>r4vanan</title>
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: rgb(26, 26, 26);
+        font-family: 'Roboto Mono', sans-serif;
+        overflow-x: hidden;
+    }
+    .box{
+        position: absolute;
+        top: 45%;
+        left: 25%;
+        transform: translate(-50%,-40%);
+        background-color: rgb(20, 20, 20, 0.8);
+        height: 450px;
+        width: 500px;
+        border-radius: 20px;
+    }
+    .name{
+        color: rgb(219, 0, 0);
+    }
+    .dollar{
+        color: rgb(158, 158, 158);
+    }
+    input{
+     margin-left: 5px;
+     padding-top: 10px;
+     background-color: transparent;
+     border: none;
+     outline: none;
+     color: white;
+     font-size: 16px;
+     width: 15rem;
+    }
+    .inner-text{
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+    .nav{
+        background-color: grey;
+        width: 500px;
+        height: 24px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    .two_dot{
+        color: white;
+    }
+    .nav .red{
+        position: absolute;
+        right: 6px;
+        top: 4px;
+        height: 18px;
+        width: 18px;
+        background-color: rgb(255, 67, 67);
+        border-radius: 100%;
+    }
+    .nav .yellow{
+        position: absolute;
+        right: 30px;
+        top: 4px;
+        height: 18px;
+        width: 18px;
+        background-color: rgb(251, 255, 0);
+        border-radius: 100%;
+    }
+    .nav .green{
+        position: absolute;
+        right: 55px;
+        top: 4px;
+        height: 18px;
+        width: 18px;
+        background-color: rgb(0, 255, 0);
+        border-radius: 100%;
+        position: absolute;
+    }
+    .cursor{
+        position: relative;
+        height: 18px;
+        width: 8px;
+        background-color: white;
+        left: 6.5rem;
+        margin-top: -19.5px;
+        animation: blink 0.7s infinite;
+        font-weight: lighter;
+        opacity: 0;
+    
+    }
+    @keyframes blink {
+       0%{
+            opacity: 1;
+       }
+       100% {
+            opacity: 0;
+        }
+    }
+    .typewrite{
+        position: absolute;
+           text-decoration: none;
+           color: white;
+           font-size: 16px;
+           opacity: 0.3;
+           font-weight: lighter;
+           margin-left: 16.5rem;
+        margin-top: -18.75px;
+    }
 
-<body>
-  <div class="container">
-    <nav>
-      <ul>
-        <li id="about">/about</li>
-        <li id="contact">/contact</li>
-      </ul>
-    </nav>
 
-    <main>
-      <h1>r4vanan:~$<span class="cursor">|</span></h1>
-      <h3>Find me online:</h3>
-      <ul>
+.curved-line{
+    color: blue;
+}
+
+.terminal_name{
+    position: relative;
+    color: rgb(0, 0, 0);
+    opacity: 0.3;
+    font-size: 13px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5px;
+}
+#myButton{
+    display: none;
+}
+
+.instruction{
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-weight: lighter;
+}
+
+.commands{
+    color: white;
+}
+.commands ul li{
+    margin-left: 50px;
+    list-style-type: none;
+}
+.commands li{
+    padding-top: 15px;
+}
+#error{
+  position: absolute;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+.tux{
+    position: absolute;
+    height: 250px;
+    transform: rotate(50deg);
+    margin-left: -300px;
+    bottom: 50px;
+    animation: hide  7s infinite ease-in-out;
+}
+
+@keyframes hide {
+    0%{
+        margin-left: -300px;
+    }
+    100%{
+        margin-left: -120px;
+    }
+}
+
+
+    /* responsiveness */
+    @media only screen and (max-width: 400px) {
+  .box{
+      width: 320px;
+      height: 500px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+  }
+  .nav{
+    width: 320px;
+  }
+}
+</style>
+<body> 
+ 
+  <div class="box">
+     <div class="nav">
+       <h4 class="terminal_name">r4vanan:~$</h4>
+       <div class="red"></div>
+       <div class="yellow"></div>
+       <div class="green"></div>
+     </div> 
+    <div class="inner-text">
+        <h3 onclick="remove()" class="name">r4vanan<span class="two_dot">:</span><span class="curved-line">~</span><span class="dollar">$</span>
+             <input maxlength="20" id="input" autocomplete="false" spellcheck="false" type="text"> 
+        <div id="i" class="cursor"></div>
+        </h3>
+    </div>
+    <div id="error"></div>
+
+</div>
+
+<div class="music" id="music"></div>
+
+<div class="instruction">
+    <h1 class="commands">
+        Hi,idk what to say i will add after you come online :) 
+        Commands:
+        <ul class="command-list">
+            <li>sudo Twitter</li>
+            <li>sudo Hackthebox</li>
+            <li>sudo Instagram</li>
+            <li>sudo Github</li>
+        </ul>
+    </h1>
+</div>
+
+
+<img class="tux" src="Tux.png" alt="tux">
+
+<button id="myButton" onclick="buttonCode()">Submit</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ <script>
+
        
-        <li>
-          <a href="https://twitter.com/r4vanan" target="_blank">Twitter</a>
-        </li>
-        <li>
-          <a href="https://www.hackthebox.com/home/users/profile/100836" target="_blank">hackthebox</a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/r4vanan/" target="_blank">Instagram</a>
-        </li>
-        <li>
-          <a href="https://github.com/r4vanan" target="_blank">Github</a>
-        </li>
+       function remove(){
+        var element = document.getElementById("i");
+        element.remove();
+       }
 
-      </ul>
-    </main>
-  </div>
+       
+    
 
-  <div class="hidden">
-    <div id="about-content">
-      <h2>about-me:$<span class="cursor">|</span></h2>
-      <p>My name is Brad Traversy and I have been programming for 14 years</p>
-      <p>
-        Some of the languages that I am fluent in include JavaScript, Python,
-        PHP and Ruby
-      </p>
-    </div>
+     $("#input").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#myButton").click();
+    }
+});
 
-    <div id="contact-content">
-      <h2>contact-me:$<span class="cursor">|</span></h2>
-      <p>You can contact me at the email and phone number below</p>
-      <ul>
-        <li>Phone: 555-555-5555</li>
-        <li>Email: brad@email.com</li>
-      </ul>
-    </div>
-  </div>
+function buttonCode(){
+     let x = document.getElementById("input");
+     let y = x.value;
+    
+    if(y === "sudo Twitter"){
+     window.open('https://twitter.com/r4vanan', '_blank');
+    }
+     else if(y === "sudo Hackthebox"){
+        window.open("https://www.hackthebox.com/home/users/profile/100836", '_blank');
+     }
+     else if(y === "sudo Instagram"){
+        window.open("https://www.instagram.com/r4vanan/", '_blank');
+     }
+    else if(y === "sudo Github"){
+        window.open("https://github.com/r4vanan", '_blank'); 
+    }
+ else{
+     alert("dei Kannu theriyuma theriyadha anga than commandsnu potrukenla olunga paru da yen da uyira vangura???");
+    // document.getElementById('error').innerHTML = ' "'+ y +'" <h4 id="error_text">Error command not found <h4>';
+        // var meme = document.getElementById('error').innerHTML = '<img src="dumb.png" alt="any">';
+        // const myTimeout = setTimeout(meme, 500);
 
-  <script src="js/winbox.bundle.js"></script>
-  <script src="js/main.js"></script>
+        document.getElementById('music').innerHTML = '<audio autoplay><source src="sed.mp3" type="audio/mpeg"></audio>'
+        document.getElementById("error").style.color = "#ff0000";
+ }
+}
+
+
+ </script>
 </body>
-
 </html>
