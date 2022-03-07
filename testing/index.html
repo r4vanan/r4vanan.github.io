@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            font-family: 'Red Hat Display', sans-serif;   
+        }
+        .text-wrapper{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50% ,-50%);
+        }
+       .text-wrapper h1{
+position: absolute;
+            background-color: black;
+            text-transform: capitalize;
+            overflow: hidden;
+        }
+      .text-wrapper h1 span{
+           display: inline-block;
+           transform: translateY(140%);
+           color: white;
+           font-size: 10rem;
+           animation-name: example;
+  animation-duration: .4s;
+        }
+    @keyframes example {
+      from{
+        opacity: 0;
+      }
+      to{
+        opacity: 1;
+      }
+    }
+     .intro{
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+     }
+     .text-wrapper{
+      display: flex;
+     
+
+     }
+
+
+
+    </style>
+</head>
+<body>
+  <div class="intro">
+    <div class="text-wrapper">
+      <h1>
+          <span  id="create">R
+          </span>
+      </h1>
+      <h1>
+          <span  id="create">4
+          </span>
+      </h1>
+      <h1>
+        <span  id="create">V
+        </span>
+    </h1>
+    <h1>
+        <span  id="create">A
+        </span>
+    </h1>
+    <h1>
+      <span  id="create">N
+      </span>
+  </h1>
+  <h1>
+    <span  id="create">A
+    </span>
+</h1>
+<h1>
+  <span  id="create">N
+  </span>
+</h1>
+  </div>
+  </div>
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+       <script>
+            let tl = gsap.timeline({defaults: {ease: "SlowMo.easeOut"}});
+            tl.fromTo("#create",{rotation: 20, autoAlpha: 0, y:'120%'},{autoAlpha: 1, rotation: 0, y:'0%', duration: 0.7, stagger:0.1})
+
+            let exit = gsap.timeline({defaults: {ease: "SlowMo.easeOut", delay: 3}});
+          exit.fromTo("#create",{autoAlpha: 1,rotation: 0,y:'0%', duration: 0.7, stagger:0.1},{autoAlpha: 0,rotation: 0,y:'-100%', duration: 0.7, stagger:0.1})
+       </script>
+</body>
+</html>
+ 
