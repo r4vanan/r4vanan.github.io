@@ -2,6 +2,7 @@
     cursor: none;
     font-family: 'Red Hat Display', sans-serif;   
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 a{
