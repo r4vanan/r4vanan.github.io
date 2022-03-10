@@ -1,261 +1,45 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R∆V∆N∆N</title>
-      <link rel="icon" type="image/svg" href="/Assets/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="style.css" />
+    <title>R∆V∆N∆N</title>
+    <link rel="icon" type="image/svg" href="/assets/icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 </head>
-<body class="body">
-
-            <div class="intro">
-                <div class="text-wrapper">
-                  <h1>
-                      <span  id="create">R
-                      </span>
-                  </h1>
-                  <h1>
-                      <span  id="create">4
-                      </span>
-                  </h1>
-                  <h1>
-                    <span  id="create">V
-                    </span>
-                </h1>
-                <h1>
-                    <span  id="create">A
-                    </span>
-                </h1>
-                <h1>
-                  <span  id="create">N
-                  </span>
-              </h1>
-              <h1>
-                <span  id="create">A
-                </span>
-            </h1>
-            <h1>
-              <span  id="create">N
-              </span>
-            </h1>
-              </div>
-              </div>
-
-
-
-<div class="cursor"></div>
-<div class="cursor2"></div>
-<div class="explore_cursor"><h1>Explore</h1></div>
-
-
-<!-- curosr -->
- <div class="nav-wrapper">
-        <div class="nav">
-         <div class="logo">
-            <svg width="98" height="28" viewBox="0 0 98 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.134 21.5V8.9H7.29C8.142 8.9 8.892 9.068 9.54 9.404C10.2 9.728 10.71 10.184 11.07 10.772C11.442 11.36 11.628 12.038 11.628 12.806C11.628 13.61 11.406 14.318 10.962 14.93C10.518 15.542 9.924 15.998 9.18 16.298L11.97 21.5H9.054L6.588 16.676H3.744V21.5H1.134ZM3.744 14.534H7.056C7.644 14.534 8.112 14.378 8.46 14.066C8.82 13.754 9 13.346 9 12.842C9 12.338 8.82 11.93 8.46 11.618C8.112 11.306 7.644 11.15 7.056 11.15H3.744V14.534ZM12.3206 21.5L17.5046 8.9H20.5106L25.6406 21.5H22.8146L21.5366 18.188H16.3346L15.0386 21.5H12.3206ZM17.1446 16.1H20.7446L18.9446 11.456L17.1446 16.1ZM28.4892 21.5L23.3772 8.9H26.2032L30.0552 18.818L33.9972 8.9H36.6972L31.5132 21.5H28.4892ZM40.1819 21.5L45.3659 8.9H48.3719L53.5019 21.5H50.6759L49.3979 18.188H44.1959L42.8999 21.5H40.1819ZM45.0059 16.1H48.6059L46.8059 11.456L45.0059 16.1ZM58.1926 21.5V8.9H60.6766L66.9406 17.036V8.9H69.3886V21.5H67.0846L60.6586 13.076V21.5H58.1926ZM70.469 21.5L75.653 8.9H78.659L83.789 21.5H80.963L79.685 18.188H74.483L73.187 21.5H70.469ZM75.293 16.1H78.893L77.093 11.456L75.293 16.1ZM84.8586 21.5V8.9H87.3426L93.6066 17.036V8.9H96.0546V21.5H93.7506L87.3246 13.076V21.5H84.8586Z" fill="white"/>
-            <path d="M50.5 14.5C46.5849 10.3529 44.7366 12.6391 43 14.5L41.0625 14.8405C38.9155 15.0957 37.221 13.4581 36.6421 12.6074C34.9845 8.77935 36.8 6.22729 39.0891 4.63226C40.9204 3.35623 40.4068 0.877271 40.0385 0C42.5644 2.47231 41.7729 5.27027 40.2731 7.34382C39.0733 9.00266 40.3521 10.5871 41.1414 11.1719C41.2045 10.7253 42.4307 9.55029 43.0358 9.01861C42.9043 8.85911 42.7201 8.49225 43.0358 8.30084C43.3516 8.10944 43.641 8.32743 43.7462 8.46035C43.5094 7.29065 43.6515 4.95126 46.1143 4.95126C48.577 4.95126 49.0875 7.18432 49.0348 8.30084C49.1138 8.06159 49.4295 8.06159 49.6663 8.30084C49.8557 8.49225 49.5874 8.85911 49.4295 9.01861C50.2504 9.46522 51.0871 10.9061 51.4029 11.5707C55.5074 8.6996 51.5607 7.58307 51.4029 4.63226C51.2766 2.2716 52.3501 1.14976 52.9026 0.883917C52.0343 4.47275 53.2183 2.00044 56.2968 7.42357C58.7595 11.7621 53.1048 13.8088 50.5 14.5Z" fill="white"/>
-            </svg>
-            
-        </div>
-
-    <div class="nav-bar">
-        <ul>
-            <li onmouseover="BigCursor()" onmouseout="normalCursor()"><a href="#home">Home</a></li>
-            <li onmouseover="BigCursor()" onmouseout="normalCursor()"><a href="#about">About</a></li>
-            <li onmouseover="BigCursor()" onmouseout="normalCursor()"><a href="#work">Work</a></li>
-            <li onmouseover="BigCursor()" onmouseout="normalCursor()"><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-</div>   
+<body>
+    
+    <section class="header">
+<div class="logo">
+    <svg width="98" height="28" viewBox="0 0 98 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.134 21.5V8.9H7.29C8.142 8.9 8.892 9.068 9.54 9.404C10.2 9.728 10.71 10.184 11.07 10.772C11.442 11.36 11.628 12.038 11.628 12.806C11.628 13.61 11.406 14.318 10.962 14.93C10.518 15.542 9.924 15.998 9.18 16.298L11.97 21.5H9.054L6.588 16.676H3.744V21.5H1.134ZM3.744 14.534H7.056C7.644 14.534 8.112 14.378 8.46 14.066C8.82 13.754 9 13.346 9 12.842C9 12.338 8.82 11.93 8.46 11.618C8.112 11.306 7.644 11.15 7.056 11.15H3.744V14.534ZM12.3206 21.5L17.5046 8.9H20.5106L25.6406 21.5H22.8146L21.5366 18.188H16.3346L15.0386 21.5H12.3206ZM17.1446 16.1H20.7446L18.9446 11.456L17.1446 16.1ZM28.4892 21.5L23.3772 8.9H26.2032L30.0552 18.818L33.9972 8.9H36.6972L31.5132 21.5H28.4892ZM40.1819 21.5L45.3659 8.9H48.3719L53.5019 21.5H50.6759L49.3979 18.188H44.1959L42.8999 21.5H40.1819ZM45.0059 16.1H48.6059L46.8059 11.456L45.0059 16.1ZM58.1926 21.5V8.9H60.6766L66.9406 17.036V8.9H69.3886V21.5H67.0846L60.6586 13.076V21.5H58.1926ZM70.469 21.5L75.653 8.9H78.659L83.789 21.5H80.963L79.685 18.188H74.483L73.187 21.5H70.469ZM75.293 16.1H78.893L77.093 11.456L75.293 16.1ZM84.8586 21.5V8.9H87.3426L93.6066 17.036V8.9H96.0546V21.5H93.7506L87.3246 13.076V21.5H84.8586Z" fill="white"/>
+        <path d="M50.5 14.5C46.5849 10.3529 44.7366 12.6391 43 14.5L41.0625 14.8405C38.9155 15.0957 37.221 13.4581 36.6421 12.6074C34.9845 8.77935 36.8 6.22729 39.0891 4.63226C40.9204 3.35623 40.4068 0.877271 40.0385 0C42.5644 2.47231 41.7729 5.27027 40.2731 7.34382C39.0733 9.00266 40.3521 10.5871 41.1414 11.1719C41.2045 10.7253 42.4307 9.55029 43.0358 9.01861C42.9043 8.85911 42.7201 8.49225 43.0358 8.30084C43.3516 8.10944 43.641 8.32743 43.7462 8.46035C43.5094 7.29065 43.6515 4.95126 46.1143 4.95126C48.577 4.95126 49.0875 7.18432 49.0348 8.30084C49.1138 8.06159 49.4295 8.06159 49.6663 8.30084C49.8557 8.49225 49.5874 8.85911 49.4295 9.01861C50.2504 9.46522 51.0871 10.9061 51.4029 11.5707C55.5074 8.6996 51.5607 7.58307 51.4029 4.63226C51.2766 2.2716 52.3501 1.14976 52.9026 0.883917C52.0343 4.47275 53.2183 2.00044 56.2968 7.42357C58.7595 11.7621 53.1048 13.8088 50.5 14.5Z" fill="white"/>
+    </svg>
 </div>
+<img class="rorono" src="/assets/rorono.png" alt="rorono">
 
-<div class="scroll-wrapper">
-    <div class="section home-section" id="home">
-             <h1 class="bg-text">R4VANAN</h1>
-
-    
-                 
-        <div class="lower-left-indicator" onmouseover="ExploreCursor()" onmouseout="normalCursor()"><a href="https://twitter.com/r4vanan">
-            </a></div>
-    
-        <div class="hero-img">
-            <h1 class="upper-text">
-                Vinoth <span>kumar</span> 
-            </h1>
-            <img class="hero-img-home"src="/Assets/hero.png" alt="Ravanan">
-             
-            <h1 class="lower-text">
-                <b><span>did you know?</span> 
-                    i am also a gamer. but a differnce is you love <lol>Xbox</lol> to play. I love <box>hack the box</box> to play!! ;)</b>
-            </h1>
-        </div>
-            <div class="social-links">
-                <ul>
-                    <li onmouseover="BigCursor()" onmouseout="normalCursor()"><a href="https://www.hackthebox.com/users/100836">
-    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M9.75433 0.0266581C9.88378 -0.00771704 10.0177 -0.00341988 10.1516 0.00947082C10.3212 0.0266584 10.4641 0.129783 10.6114 0.207127C13.5799 1.85714 16.5484 3.51144 19.5213 5.16145C19.807 5.29895 20.0168 5.59114 19.9989 5.90911V16.1228C20.0079 16.4107 19.8204 16.6771 19.5659 16.8103C16.535 18.4947 13.504 20.1834 10.473 21.8678C10.2007 22.0397 9.82575 22.044 9.54899 21.8807C6.57158 20.2264 3.59864 18.5721 0.621226 16.9135C0.473918 16.8275 0.313218 16.7588 0.201621 16.6299C0.0632406 16.4838 -0.00818147 16.2861 0.000746293 16.0885V5.87044C-0.00818147 5.58684 0.179302 5.32044 0.429279 5.18723C3.42454 3.52433 6.41535 1.85714 9.40615 0.194237C9.52221 0.13408 9.62934 0.0610333 9.75433 0.0266581ZM9.92842 2.06768C9.86146 2.07628 9.80343 2.11065 9.7454 2.14073C7.68309 3.288 5.62077 4.43098 3.56292 5.58255C3.31741 5.71575 3.31741 6.10247 3.57185 6.23138C5.63863 7.38724 7.70987 8.53451 9.78111 9.68608C9.91057 9.76772 10.0891 9.76772 10.2186 9.68608C12.2898 8.53451 14.3611 7.38724 16.4278 6.23138C16.6778 6.10247 16.6823 5.71575 16.4323 5.58255C14.3655 4.43098 12.2943 3.27941 10.223 2.12784C10.1382 2.07198 10.0311 2.0505 9.92842 2.06768ZM2.16573 8.01029C2.00949 8.06615 1.90682 8.22944 1.91575 8.38842V15.2592C1.91129 15.4138 2.00949 15.5556 2.14787 15.6244C4.21019 16.7717 6.26804 17.9189 8.33035 19.0619C8.58479 19.2123 8.93744 19.0018 8.91958 18.7182V11.8431C8.92405 11.7013 8.84816 11.5638 8.72317 11.4908L2.53623 8.04896C2.4291 7.98451 2.28625 7.95443 2.16573 8.01029ZM17.5572 8.006C17.3742 8.08764 17.209 8.19506 17.0305 8.28959C15.1199 9.35093 13.2094 10.4166 11.2988 11.4779C11.156 11.5466 11.0712 11.6927 11.0756 11.8474V18.7182C11.0578 19.0018 11.4104 19.2123 11.6649 19.0662C13.7272 17.9189 15.7895 16.7717 17.8473 15.6287C17.9857 15.5642 18.0884 15.4181 18.0795 15.2678V8.35834C18.0839 8.10912 17.7938 7.91146 17.5572 8.006Z" fill="white"/>
-    </svg>
-    </a></li>
-                    <li onmouseover="BigCursor()" onmouseout="normalCursor()"><a href="#">
-                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_60_2)">
-                        <path d="M13.6562 18.4062H5.34375C2.73125 18.4062 0.59375 16.2688 0.59375 13.6562V5.34375C0.59375 2.73125 2.73125 0.59375 5.34375 0.59375H13.6562C16.2688 0.59375 18.4062 2.73125 18.4062 5.34375V13.6562C18.4062 16.2688 16.2688 18.4062 13.6562 18.4062Z" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9.5 13.6562C11.7954 13.6562 13.6562 11.7954 13.6562 9.5C13.6562 7.20457 11.7954 5.34375 9.5 5.34375C7.20457 5.34375 5.34375 7.20457 5.34375 9.5C5.34375 11.7954 7.20457 13.6562 9.5 13.6562Z" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M14.25 4.75C14.5779 4.75 14.8438 4.48417 14.8438 4.15625C14.8438 3.82833 14.5779 3.5625 14.25 3.5625C13.9221 3.5625 13.6562 3.82833 13.6562 4.15625C13.6562 4.48417 13.9221 4.75 14.25 4.75Z" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                        </g>
-                        <defs>
-                        <clipPath id="clip0_60_2">
-                        <rect width="19" height="19" fill="white"/>
-                        </clipPath>
-                        </defs>
-                        </svg></a></li>
-                    <li onmouseover="BigCursor()" onmouseout="normalCursor()"><a href="https://twitter.com/r4vanan" target="_blank">
-    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_60_9)">
-    <path d="M20.3437 3.28125C19.6218 3.74063 18.9 4.13438 17.9812 4.33125C17.1937 3.28125 15.8812 2.625 14.4375 2.625C11.8781 2.625 9.8437 4.65938 9.8437 7.21875C9.8437 7.48125 9.8437 7.74375 9.90933 8.00625C7.02183 7.54688 4.46245 6.0375 2.69058 3.80625C2.36245 4.39688 2.16558 5.11875 2.16558 5.90625C2.16558 7.35 2.88745 8.59688 3.93745 9.31875C3.2812 9.31875 2.62495 9.12188 2.09995 8.79375V8.85938C2.09995 10.8938 3.47808 12.5344 5.31558 12.9281C4.98745 12.9938 4.5937 13.0594 4.26558 13.0594C4.00308 13.0594 3.74058 13.0594 3.47808 12.9938C4.00308 14.6344 5.44683 15.8156 7.2187 15.8813C5.84058 16.9969 4.0687 17.6531 2.2312 17.6531C1.90308 17.6531 1.57495 17.6531 1.24683 17.5875C3.0187 18.7688 5.1187 19.425 7.41558 19.425C14.7656 19.425 18.8343 13.1906 18.9 7.74375L21 6.5625L19.0312 5.90625L20.3437 3.28125Z" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-    <defs>
-    <clipPath id="clip0_60_9">
-    <rect width="21" height="21" fill="white"/>
-    </clipPath>
-    </defs>
-    </svg>
-    </a></li>
-                </ul>
-            </div>
-        </div>
-    
-    
-    
-    <!-- About -->
-    <div class="section about-section" id="about">
-      <div class="about-info-wrapper">
-          <h1 class="about-title">Hi, i am <name>Ravanan</name></h1>
-          <h2 class="about-info">
-              <b>Hi, My name is Vinothkumar aka ravanan. I am a 22 old guy from India, who love Computers and Softwares. I am also a diploma in mechanical engineer. But most importantly I am a man of culture as well and i love my Tamil language. I love anime to watch.</b>
-          </h2>
-      <div  class="about__btn">
-      </div>    
-      </div>
-        <div  onmouseover="ExploreCursor()" onmouseout="normalCursor()" class="skew-image about-hero-img">
-             <a href="#"><img src="/Assets/about-hero.png" alt=""></a>
-        </div>
-    </div>
-    
-    <div class="work" id="work">
-      <div class="work-info--wrapper">
-          <h1><b>Interests</b></h1>
-          <h3><b>Bug hunting is my work across some websites. i found alot of bugs from various websites! </b></h3>
-          <h3><b>Helping my friends with their doubts on technology. because in my opinion "how much you share your knowlege! that much you can learn"</b></h3>
-          <h3><b>Learning on human Psycology</b></h3>
-          <script src="https://www.hackthebox.eu/badge/100836"></script>
-      </div>
-      <div onmouseover="ExploreCursor()" onmouseout="normalCursor()" id="left" class="skew-image-hero"><img src="/Assets/demon.png"alt="">
-      </div>
-      </div>          
-
-      </div>
-    </div>
-    
-        <div class="project-show-case">
-            <div class="project project-1">
-                 
-                <div class="left-project-wrapper">
-                    <h1><pro1>Project 1</pro1></h1>
-                    <h2> lawra build with Python</h2>
-                    <h3><b>It is a voice commanding script to control my pc to hacking or scanning purpose. I am not building this as a chatbot. Because, I love pentesting and gameing. it can scan 180+ known exploits or vulnerablities on websites. i love to automate things<b></h3>
-                </div>
-        </div>
-            <div class="project project-2">
-                <div class="left-project-wrapper-2">
-                    <h1>Project 2</h1>
-                    <h2>Linux distro(winux)</h2>
-                    <h3><b>I build this linux based by Arch linux. sorry most of people love debians ;) but i love arch linux. it having the Dynamic Window Manager as a window manager. Because its full size is 26 kb. its really very minimal compared other window manager. </b></h3>
-                </div>
-    
-                <div class="right-project-cover">
-                    <a onmouseover="ExploreCursor()" onmouseout="normalCursor()" href="#"><img src="/Assets/projects-hero.png" alt=""></a> 
-                 </div>
-            </div>
-        </div>
-        <div class="section work-section" id="contact">
-            <div class="right-project-cover-2">
-                <a onmouseover="ExploreCursor()" onmouseout="normalCursor()" href="#"><img src="/Assets/lol.png" alt=""></a>
-                </div>
-            <div class="contact-info-wrapper">
-               <h1>Find me on <a href="https://twitter.com/r4vanan" target="_blank" onmouseover="BigCursor()" onmouseout="normalCursor()">@twitter</a> 
-                and email me <a href="mailto: vinothlawrence66@gmail.com" target="_blank" onmouseover="BigCursor()" onmouseout="normalCursor()"  >email</a></h1>
-            </div>
-           <div class="social-links">
-            <ul>
-                <li onmouseover="BigCursor()" onmouseout="normalCursor()"><a href="#">
-    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M9.75433 0.0266581C9.88378 -0.00771704 10.0177 -0.00341988 10.1516 0.00947082C10.3212 0.0266584 10.4641 0.129783 10.6114 0.207127C13.5799 1.85714 16.5484 3.51144 19.5213 5.16145C19.807 5.29895 20.0168 5.59114 19.9989 5.90911V16.1228C20.0079 16.4107 19.8204 16.6771 19.5659 16.8103C16.535 18.4947 13.504 20.1834 10.473 21.8678C10.2007 22.0397 9.82575 22.044 9.54899 21.8807C6.57158 20.2264 3.59864 18.5721 0.621226 16.9135C0.473918 16.8275 0.313218 16.7588 0.201621 16.6299C0.0632406 16.4838 -0.00818147 16.2861 0.000746293 16.0885V5.87044C-0.00818147 5.58684 0.179302 5.32044 0.429279 5.18723C3.42454 3.52433 6.41535 1.85714 9.40615 0.194237C9.52221 0.13408 9.62934 0.0610333 9.75433 0.0266581ZM9.92842 2.06768C9.86146 2.07628 9.80343 2.11065 9.7454 2.14073C7.68309 3.288 5.62077 4.43098 3.56292 5.58255C3.31741 5.71575 3.31741 6.10247 3.57185 6.23138C5.63863 7.38724 7.70987 8.53451 9.78111 9.68608C9.91057 9.76772 10.0891 9.76772 10.2186 9.68608C12.2898 8.53451 14.3611 7.38724 16.4278 6.23138C16.6778 6.10247 16.6823 5.71575 16.4323 5.58255C14.3655 4.43098 12.2943 3.27941 10.223 2.12784C10.1382 2.07198 10.0311 2.0505 9.92842 2.06768ZM2.16573 8.01029C2.00949 8.06615 1.90682 8.22944 1.91575 8.38842V15.2592C1.91129 15.4138 2.00949 15.5556 2.14787 15.6244C4.21019 16.7717 6.26804 17.9189 8.33035 19.0619C8.58479 19.2123 8.93744 19.0018 8.91958 18.7182V11.8431C8.92405 11.7013 8.84816 11.5638 8.72317 11.4908L2.53623 8.04896C2.4291 7.98451 2.28625 7.95443 2.16573 8.01029ZM17.5572 8.006C17.3742 8.08764 17.209 8.19506 17.0305 8.28959C15.1199 9.35093 13.2094 10.4166 11.2988 11.4779C11.156 11.5466 11.0712 11.6927 11.0756 11.8474V18.7182C11.0578 19.0018 11.4104 19.2123 11.6649 19.0662C13.7272 17.9189 15.7895 16.7717 17.8473 15.6287C17.9857 15.5642 18.0884 15.4181 18.0795 15.2678V8.35834C18.0839 8.10912 17.7938 7.91146 17.5572 8.006Z" fill="white"/>
-    </svg>
-    </a></li>
-                <li onmouseover="BigCursor()" onmouseout="normalCursor()"><a href="#">
-                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_60_2)">
-                    <path d="M13.6562 18.4062H5.34375C2.73125 18.4062 0.59375 16.2688 0.59375 13.6562V5.34375C0.59375 2.73125 2.73125 0.59375 5.34375 0.59375H13.6562C16.2688 0.59375 18.4062 2.73125 18.4062 5.34375V13.6562C18.4062 16.2688 16.2688 18.4062 13.6562 18.4062Z" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9.5 13.6562C11.7954 13.6562 13.6562 11.7954 13.6562 9.5C13.6562 7.20457 11.7954 5.34375 9.5 5.34375C7.20457 5.34375 5.34375 7.20457 5.34375 9.5C5.34375 11.7954 7.20457 13.6562 9.5 13.6562Z" stroke="white" stroke-width="2" stroke-miterlimit:="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M14.25 4.75C14.5779 4.75 14.8438 4.48417 14.8438 4.15625C14.8438 3.82833 14.5779 3.5625 14.25 3.5625C13.9221 3.5625 13.6562 3.82833 13.6562 4.15625C13.6562 4.48417 13.9221 4.75 14.25 4.75Z" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0_60_2">
-                    <rect width="19" height="19" fill="white"/>
-                    </clipPath>
-                    </defs>
-                    </svg></a></li>
-                <li onmouseover="BigCursor()" onmouseout="normalCursor()"><a href="#">
-    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_60_9)">
-    <path d="M20.3437 3.28125C19.6218 3.74063 18.9 4.13438 17.9812 4.33125C17.1937 3.28125 15.8812 2.625 14.4375 2.625C11.8781 2.625 9.8437 4.65938 9.8437 7.21875C9.8437 7.48125 9.8437 7.74375 9.90933 8.00625C7.02183 7.54688 4.46245 6.0375 2.69058 3.80625C2.36245 4.39688 2.16558 5.11875 2.16558 5.90625C2.16558 7.35 2.88745 8.59688 3.93745 9.31875C3.2812 9.31875 2.62495 9.12188 2.09995 8.79375V8.85938C2.09995 10.8938 3.47808 12.5344 5.31558 12.9281C4.98745 12.9938 4.5937 13.0594 4.26558 13.0594C4.00308 13.0594 3.74058 13.0594 3.47808 12.9938C4.00308 14.6344 5.44683 15.8156 7.2187 15.8813C5.84058 16.9969 4.0687 17.6531 2.2312 17.6531C1.90308 17.6531 1.57495 17.6531 1.24683 17.5875C3.0187 18.7688 5.1187 19.425 7.41558 19.425C14.7656 19.425 18.8343 13.1906 18.9 7.74375L21 6.5625L19.0312 5.90625L20.3437 3.28125Z" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-    <defs>
-    <clipPath id="clip0_60_9">
-    <rect width="21" height="21" fill="white"/>
-    </clipPath>
-    </defs>
-    </svg>
-    </a></li>
-            </ul>
-        </div>
-        </div>
+<div class="name">
+    <h1>Vinoth Kumar</h1>
+    <h2>I'm a <span class="auto-input"></span></h2>
+    <p>Did you <red><b>know?<b></red><br>I am also a <b>gamer!<b><br>but small differents,you Love <blue>Xbox</blue>to play!<br>I Love <green>HackTheBox</green> to play!</p>
 </div>
- <script src="master.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-   <script>
-
-
-
-ScrollReveal({ 
-    reset: true ,
-    duration: 500,
-    distance: '20px',
-    delay: 400
-});
-
-// ScrollReveal().reveal('.upper-text',{delay: 600, orgin: 'bottom'});
-// ScrollReveal().reveal('.hero-img',{delay:500, orgin: 'left', reset: true});
-// ScrollReveal().reveal('.project-about-home',{delay:500, orgin: 'right'});
-
-// ScrollReveal().reveal('.about-title',{delay:500, orgin: 'bottom'});
-// ScrollReveal().reveal('.about-info',{delay:700, orgin: 'bottom'});
-// ScrollReveal().reveal('.about__btn',{delay:900, orgin: 'bottom'});
-
-let tl = gsap.timeline({defaults: {ease: "SlowMo.easeOut"}});
-            tl.fromTo("#create",{rotation: 20, autoAlpha: 0, y:'120%'},{autoAlpha: 1, rotation: 0, y:'0%', duration: 0.7, stagger:0.1})
-
-            let exit = gsap.timeline({defaults: {ease: "SlowMo.easeOut", delay: 3}});
-          exit.fromTo("#create",{autoAlpha: 1,rotation: 0,y:'0%', duration: 0.7, stagger:0.1},{autoAlpha: 0,rotation: 0,y:'-100%', duration: 0.7, stagger:0.1});
-
-
-   </script>
+    </section> 
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed(".auto-input", {
+            strings: ["Programmer","Pentester","Mechanical Engineer"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true
+        })
+    </script>
 </body>
 </html>
+
+
+
+
