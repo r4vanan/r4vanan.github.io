@@ -79,17 +79,17 @@ nav{
 
 @media(max-width:480px){
     .name h1{
-        font-size: 20px;
+        font-size: 40px;
     }
     .name h2{
-        font-size: 15px;
+        font-size: 20px;
     }
     .name h2 span{
-        font-size: 17px;
+        font-size: 25px;
         color: #00ff62e0;
     }
     .name p{
-        font-size: 11px;
+        font-size: 16px;
     }
     .bg-text{
         color: transparent;
@@ -100,7 +100,7 @@ nav{
         opacity: 0.1;
     }
     .rorono{
-        float: right;
+        float: center;
         height: 700px;
         position: relative;
         filter: opacity(50%);
