@@ -101,9 +101,9 @@ nav{
     }
     .rorono{
         float: right;
-        height: 470px;
+        height: 700px;
         position: relative;
-        filter: opacity(60%);
+        filter: opacity(50%);
         margin-top: 50px;
         margin-right: 15px;
     }
