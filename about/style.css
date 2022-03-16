@@ -5,3 +5,10 @@
     font-family: 'Josefin Sans', sans-serif;
     overflow-x: hidden;
 }
+.name h2{
+    font-size: 45px;
+}
+.name h2 span{
+    font-size: 55px;
+    color: #00ff62e0;
+}

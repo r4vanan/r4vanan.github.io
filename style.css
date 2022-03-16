@@ -18,19 +18,18 @@
     top: 30px;
     left: 30px;
 }
-
-nav{
-    display: flex;
-    padding: 2% 6%;
-    justify-content: space-between;
-    align-items: center;
+.name h2{
+    color: #51ff00;
+    text-align: left;
 }
-
-.nav-links{
-    flex: 1;
-    text-align: right;
+.name ul li{
+    text-align: left;
 }
-
+.name ul li text {
+    color: #d14d00;
+    font-size: 20px;
+    margin-right: 50%;
+}
 .name{
     width: 90%;
     color: #fff;
@@ -45,21 +44,13 @@ nav{
     color: #ffef0e;
     z-index: -2;
 }
-.name h2{
-    font-size: 45px;
-}
-.name h2 span{
-    font-size: 55px;
-    color: #00ff62e0;
-}
-
 .name p{
-    margin: 10px;
-    font-size: 14px;
+    margin: 20px;
+    font-size: 15px;
     z-index: -2;
 }
 .name red{
-    color: #3902ffe0;
+    color: #ff0202e0;
 }
 .name blue{
     color: rgb(0, 132, 255)
@@ -67,7 +58,9 @@ nav{
 .name green{
     color: #51ff00;
 }
-
+.name violate{
+    color: #6f00ff;
+}
 
 .rorono {
     float: right;
