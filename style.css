@@ -22,13 +22,10 @@
     color: #51ff00;
     text-align: left;
 }
-.name ul li{
-    text-align: left;
-}
-.name ul li text {
+.name text {
     color: #d14d00;
     font-size: 20px;
-    margin-right: 50%;
+    text-align: center;
 }
 .name{
     width: 90%;
