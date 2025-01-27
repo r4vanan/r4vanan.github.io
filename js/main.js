@@ -83,7 +83,7 @@ function setBackground(url) {
   document.body.style.backgroundSize = 'cover';
   document.body.style.backgroundRepeat = 'no-repeat';
   document.body.style.backgroundPosition = 'center';
-  document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // Add a semi-transparent black overlay
+  document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // Add a semi-transparent black overlay
   document.body.style.backgroundBlendMode = 'overlay'; // Blend the overlay with the background image
 }
 
