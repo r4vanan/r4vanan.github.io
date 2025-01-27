@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 99%;
+  width: 100%;
+  min-width: 320px; /* Adjusted for mobile compatibility */
+  color: #dfdfdf;
+  font-family: 'Courier New', monospace;
+  overflow-x: hidden; /* Prevent overflow on the right side */
+  overflow: hidden;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 14px; /* Decrease font size for mobile compatibility */
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 12px; /* Further decrease font size for smaller screens */
+  }
+  p {
+    white-space: pre-wrap; /* Allow text to wrap on mobile */
+    word-wrap: break-word; /* Break long words on mobile */
+    animation: none; /* Remove typing effect on mobile */
+  }
+}
+
+::selection {
+  color: #211830;
+  background-color: #519975;
+}
+
+::-moz-selection {
+  color: #211830;
+  background-color: #519975;
+}
+
+textarea {
+  left: -1000px;
+  position: absolute;
+}
+
+b {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.cursor {
+  font-size: 12px;
+  color: hsl(0, 100%, 50%);
+  background-color: hsl(0, 100%, 50%);
+  position: relative;
+  opacity: 2;
+  height: 1.5em;
+  width: 0.7em;
+  max-width: 10px;
+  transform: translateY(4px);
+  overflow: hidden;
+  text-indent: -5px;
+  display: inline-block;
+  text-decoration: blink;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#command {
+  cursor: text;
+  height: 20px;
+  color: #c5c5c5;
+}
+
+#liner {
+  line-height: 1.3em;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 0; /* Remove top margin */
+  animation: show 0.5s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+#liner::before {
+  color: #2bff00;
+  content: "r4vanan@kali:~$ ";
+  font-weight: bold;
+}
+
+#liner.password::before {
+  content: "Password:";
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+p {
+  display: block;
+  line-height: 1.3em;
+  margin: 0;
+  overflow: hidden;
+  white-space: pre-wrap; /* Allow text to wrap */
+  word-wrap: break-word; /* Break long words */
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+
+.no-animation {
+  color: #00FF00;
+}
+
+.margin {
+  margin-left: 20px;
+}
+
+.index {
+  color: #00FF00;
+}
+
+.color2 {
+  color: #FFFFFF;
+}
+
+.command {
+  color: #00FFFF;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 255, 255, 0.5);
+}
+
+.error {
+  color: #FF0000;
+}
+
+.white {
+  color: #fff;
+}
+
+.inherit,
+a {
+  color: #9C8394;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+a:hover {
+  background: #73ABAD;
+  color: #00FF00;
+}
+
+a:focus {
+  outline: 0;
+}
+
+#terminal {
+  padding: 10px;
+  max-width: 100%;
+  max-height: 100vh;
+  overflow: auto;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  #terminal {
+    padding: 5px;
+    margin: 5px;
+  }
+}
