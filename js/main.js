@@ -1,52 +1,59 @@
-var beforeEl = document.getElementById("before");
-var linerEl = document.getElementById("liner");
-var commandEl = document.getElementById("typer");
-var textareaEl = document.getElementById("texter");
-var terminalEl = document.getElementById("terminal");
-
+var beforeEl, linerEl, commandEl, textareaEl, terminalEl;
 var cmdIndex = 0;
 var isPwdMode = false;
 let isPwdCorrect = false;
 var cmdHistory = [];
 
-setTimeout(function() {
-  loopLines(bannerDetails, "", 80);
-  textareaEl.focus();
-}, 100);
+function initializeElements() {
+  beforeEl = document.getElementById("before");
+  linerEl = document.getElementById("liner");
+  commandEl = document.getElementById("typer");
+  textareaEl = document.getElementById("texter");
+  terminalEl = document.getElementById("terminal");
 
-window.addEventListener("keyup", handleKeyUp);
+  setTimeout(function() {
+    loopLines(bannerDetails, "", 80);
+    textareaEl.focus();
+  }, 100);
 
-document.addEventListener('click', function() {
-  textareaEl.focus();
-});
+  window.addEventListener("keyup", handleKeyUp);
 
-document.addEventListener('touchstart', function() {
-  textareaEl.focus();
-});
+  document.addEventListener('click', function() {
+    textareaEl.focus();
+  });
 
-document.addEventListener('paste', handlePaste);
+  document.addEventListener('touchstart', function() {
+    textareaEl.focus();
+  });
 
-// Disable right-click context menu
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-});
+  document.addEventListener('paste', handlePaste);
 
-// Disable developer tools
-document.addEventListener('keydown', function(e) {
-  if (e.keyCode == 123 || // F12
-      (e.ctrlKey && e.shiftKey && e.keyCode == 73) || // Ctrl+Shift+I
-      (e.ctrlKey && e.shiftKey && e.keyCode == 74) || // Ctrl+Shift+J
-      (e.ctrlKey && e.shiftKey && e.keyCode == 67) || // Ctrl+Shift+C
-      (e.ctrlKey && e.keyCode == 85)) { // Ctrl+U
+  // Disable right-click context menu
+  document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
-  }
-});
+  });
 
-console.log(
-  "%cYou hacked my password damn!😠",
-  "color: #04ff00; font-weight: bold; font-size: 24px;"
-);
-console.log("%cPassword: '" + password + "' - I wonder what it does?🤔", "color: grey");
+  // Disable developer tools
+  document.addEventListener('keydown', function(e) {
+    if (e.keyCode == 123 || // F12
+        (e.ctrlKey && e.shiftKey && e.keyCode == 73) || // Ctrl+Shift+I
+        (e.ctrlKey && e.shiftKey && e.keyCode == 74) || // Ctrl+Shift+J
+        (e.ctrlKey && e.shiftKey && e.keyCode == 67) || // Ctrl+Shift+C
+        (e.ctrlKey && e.keyCode == 85)) { // Ctrl+U
+      e.preventDefault();
+    }
+  });
+
+  console.log(
+    "%cYou hacked my password damn!😠",
+    "color: #04ff00; font-weight: bold; font-size: 24px;"
+  );
+  console.log("%cPassword: '" + password + "' - I wonder what it does?🤔", "color: grey");
+
+  //init
+  textareaEl.value = "";
+  commandEl.innerHTML = textareaEl.value;
+}
 
 // Fetch a specific background image based on the current time
 function fetchTimedBackground() {
@@ -56,27 +63,12 @@ function fetchTimedBackground() {
       const urls = data.split('\n').filter(url => url.trim() !== '');
       const randomIndex = Math.floor(Math.random() * urls.length);
       const randomImageUrl = urls[randomIndex];
-      setBackground(randomImageUrl);
+      setBackground(randomImageUrl, initializeElements);
     })
     .catch(error => console.error('Error fetching background image:', error));
 }
 
-function tryNextUrl(urls) {
-  if (!urls.length) return console.error('No valid URLs found');
-  const url = urls.pop();
-  fetch(url)
-    .then(res => {
-      if (res.ok) {
-        localStorage.setItem('backgroundImage', url); // Store the selected image URL in local storage
-        setBackground(url);
-      } else {
-        tryNextUrl(urls);
-      }
-    })
-    .catch(() => tryNextUrl(urls));
-}
-
-function setBackground(url) {
+function setBackground(url, callback) {
   const img = new Image();
   img.onload = function() {
     document.body.style.backgroundImage = `url(${url})`;
@@ -85,6 +77,7 @@ function setBackground(url) {
     document.body.style.backgroundPosition = 'center';
     document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // Add a semi-transparent black overlay
     document.body.style.backgroundBlendMode = 'overlay'; // Blend the overlay with the background image
+    if (callback) callback();
   };
   img.src = url;
 }
@@ -92,24 +85,13 @@ function setBackground(url) {
 // Check if a background image is already stored in local storage
 const storedBackgroundImage = localStorage.getItem('backgroundImage');
 if (storedBackgroundImage) {
-  const img = new Image();
-  img.onload = function() {
-    setBackground(storedBackgroundImage);
-  };
-  img.onerror = function() {
-    fetchTimedBackground();
-  };
-  img.src = storedBackgroundImage;
+  setBackground(storedBackgroundImage, initializeElements);
 } else {
   fetchTimedBackground();
 }
 
 // Change wallpaper every 30 minutes (1800000 milliseconds)
 setInterval(fetchTimedBackground, 1800000);
-
-//init
-textareaEl.value = "";
-commandEl.innerHTML = textareaEl.value;
 
 function handleKeyUp(e) {
   if (e.keyCode == 181) {
