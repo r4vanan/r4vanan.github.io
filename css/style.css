@@ -4,7 +4,7 @@ body {
   min-height: 99%;
   width: 100%;
   min-width: 320px; /* Adjusted for mobile compatibility */
-  color: #dfdfdf;
+  color: #000000;
   font-family: 'Courier New', monospace;
   overflow-x: hidden; /* Prevent overflow on the right side */
   overflow: hidden;
