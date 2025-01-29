@@ -13,6 +13,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   font-size: 14px; /* Decrease font size for mobile compatibility */
+  background-color: #000000;
 }
 
 @media (max-width: 768px) {
