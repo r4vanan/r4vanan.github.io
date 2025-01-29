@@ -63,6 +63,7 @@ function fetchTimedBackground() {
       const urls = data.split('\n').filter(url => url.trim() !== '');
       const randomIndex = Math.floor(Math.random() * urls.length);
       const randomImageUrl = urls[randomIndex];
+      sessionStorage.setItem('backgroundImage', randomImageUrl); // Store the selected image URL in session storage
       setBackground(randomImageUrl, initializeElements);
     })
     .catch(error => console.error('Error fetching background image:', error));
@@ -82,8 +83,8 @@ function setBackground(url, callback) {
   img.src = url;
 }
 
-// Check if a background image is already stored in local storage
-const storedBackgroundImage = localStorage.getItem('backgroundImage');
+// Check if a background image is already stored in session storage
+const storedBackgroundImage = sessionStorage.getItem('backgroundImage');
 if (storedBackgroundImage) {
   setBackground(storedBackgroundImage, initializeElements);
 } else {
