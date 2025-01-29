@@ -54,24 +54,9 @@ function fetchTimedBackground() {
     .then(response => response.text())
     .then(data => {
       const urls = data.split('\n').filter(url => url.trim() !== '');
-      const currentHour = new Date().getHours();
-      let filteredUrls;
-
-      if (currentHour >= 6 && currentHour < 12) {
-        filteredUrls = urls.filter(url => url.includes('morning'));
-      } else if (currentHour >= 12 && currentHour < 18) {
-        filteredUrls = urls.filter(url => url.includes('afternoon'));
-      } else if (currentHour >= 18 && currentHour < 21) {
-        filteredUrls = urls.filter(url => url.includes('evening'));
-      } else {
-        filteredUrls = urls.filter(url => url.includes('night'));
-      }
-
-      if (filteredUrls.length === 0) {
-        filteredUrls = urls; // Fallback to all URLs if no specific time-based URLs are found
-      }
-
-      tryNextUrl(filteredUrls);
+      const randomIndex = Math.floor(Math.random() * urls.length);
+      const randomImageUrl = urls[randomIndex];
+      setBackground(randomImageUrl);
     })
     .catch(error => console.error('Error fetching background image:', error));
 }
@@ -100,10 +85,6 @@ function setBackground(url) {
     document.body.style.backgroundPosition = 'center';
     document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // Add a semi-transparent black overlay
     document.body.style.backgroundBlendMode = 'overlay'; // Blend the overlay with the background image
-  };
-  img.onerror = function() {
-    console.error('Error loading background image:', url);
-    fetchTimedBackground(); // Retry fetching a new background image
   };
   img.src = url;
 }
