@@ -3,6 +3,7 @@ var cmdIndex = 0;
 var isPwdMode = false;
 let isPwdCorrect = false;
 var cmdHistory = [];
+var lastScrollTop = 0;
 
 function initializeElements() {
   beforeEl = document.getElementById("before");
@@ -43,6 +44,8 @@ function initializeElements() {
       e.preventDefault();
     }
   });
+
+  terminalEl.addEventListener('scroll', handleScroll);
 
   console.log(
     "%cYou hacked my password damn!😠",
@@ -165,6 +168,9 @@ function executeCommand(cmd) {
     case "whoami":
       loopLines(whoamiDetails, "color2 margin", 80);
       break;
+    case "bloodyad":
+      loopLines(bloodyAdDetails, "color2 margin", 80);
+      break;
     case "video":
       addLine("Opening YouTube...", "color2", 80);
       openNewTab(youtubeLink);
@@ -265,7 +271,7 @@ function addLine(text, style, time) {
 
     beforeEl.parentNode.insertBefore(next, beforeEl);
 
-    window.scrollTo(0, document.body.offsetHeight);
+    scrollToBottom(); // Auto-scroll to the bottom
   }, time);
 }
 
@@ -275,11 +281,25 @@ function addPrompt() {
   linerEl.innerHTML = '<span id="typer"></span><b class="cursor" id="cursor">█</b>';
   terminalEl.appendChild(linerEl);
   textareaEl.focus();
-  window.scrollTo(0, document.body.scrollHeight); // Ensure the prompt is at the bottom
+  scrollToBottom(); // Auto-scroll to the bottom
 }
 
 function loopLines(name, style, time) {
   name.forEach(function(item, index) {
     addLine(item, style, index * time);
   });
+}
+
+function scrollToBottom() {
+  terminalEl.scrollTop = terminalEl.scrollHeight;
+}
+
+function handleScroll() {
+  var st = terminalEl.scrollTop;
+  if (st < lastScrollTop) {
+    linerEl.style.display = 'none'; // Hide the prompt
+  } else {
+    linerEl.style.display = 'block'; // Show the prompt
+  }
+  lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }
